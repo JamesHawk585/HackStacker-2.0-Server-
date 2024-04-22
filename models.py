@@ -67,6 +67,8 @@ class BlogPost(db.Model):
     blog_content = db.Column(db.String(5000))
     publication_date = db.Column(db.DateTime, server_default=db.func.now())
     edited_at = db.Column(db.DateTime, onupdate=db.func.now())
+    blog_card_thumbnail = db.Column(db.string)
+    blog_card_banner = db.Column(db.string)
     
     user_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
