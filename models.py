@@ -16,9 +16,9 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     _password_hash = db.Column(db.String)
     bio = db.Column(db.String(250))
-    profile_pic = db.Column(db.string)
-    first_name = db.Column(db.string)
-    last_name = db.Column(db.string)
+    profile_pic = db.Column(db.String)
+    first_name = db.Column(db.String)
+    last_name = db.Column(db.String)
 
     blog_posts = db.relationship('BlogPost', backref='user')
     comments = db.relationship('Comment', backref='user')
@@ -67,8 +67,8 @@ class BlogPost(db.Model):
     blog_content = db.Column(db.String(5000))
     publication_date = db.Column(db.DateTime, server_default=db.func.now())
     edited_at = db.Column(db.DateTime, onupdate=db.func.now())
-    blog_card_thumbnail = db.Column(db.string)
-    blog_card_banner = db.Column(db.string)
+    blog_card_thumbnail = db.Column(db.String)
+    blog_card_banner = db.Column(db.String)
     
     user_id = db.Column(db.Integer(), db.ForeignKey('user.id'))
 
