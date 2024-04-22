@@ -16,6 +16,9 @@ class User(db.Model):
     username = db.Column(db.String(80), unique=True, nullable=False)
     _password_hash = db.Column(db.String)
     bio = db.Column(db.String(250))
+    profile_pic = db.Column(db.string)
+    first_name = db.Column(db.string)
+    last_name = db.Column(db.string)
 
     blog_posts = db.relationship('BlogPost', backref='user')
     comments = db.relationship('Comment', backref='user')
